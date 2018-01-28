@@ -210,6 +210,11 @@
     <Image Include="res\Toolbar.bmp" />
     <Image Include="res\Toolbar256.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ElHook\ElHook.vcxproj">
+      <Project>{adddafd0-2f20-4088-ae81-f22bbd0a0121}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

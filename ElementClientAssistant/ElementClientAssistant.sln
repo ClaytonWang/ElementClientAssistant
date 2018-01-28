@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElementClientAssistant", "ElementClientAssistant\ElementClientAssistant.vcxproj", "{D6430933-2666-474C-BB73-256BA2FB2927}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElHook", "ElHook\ElHook.vcxproj", "{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{D6430933-2666-474C-BB73-256BA2FB2927}.Release|x64.Build.0 = Release|x64
 		{D6430933-2666-474C-BB73-256BA2FB2927}.Release|x86.ActiveCfg = Release|Win32
 		{D6430933-2666-474C-BB73-256BA2FB2927}.Release|x86.Build.0 = Release|Win32
+		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Debug|x64.ActiveCfg = Debug|x64
+		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Debug|x64.Build.0 = Debug|x64
+		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Debug|x86.ActiveCfg = Debug|Win32
+		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Debug|x86.Build.0 = Debug|Win32
+		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Release|x64.ActiveCfg = Release|x64
+		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Release|x64.Build.0 = Release|x64
+		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Release|x86.ActiveCfg = Release|Win32
+		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
