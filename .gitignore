@@ -182,7 +182,4 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 # VS 2015 config folder
-BlogEngine/.vs/
-
-# Default extensions data
-BlogEngine/BlogEngine.NET/App_Data/datastore/extensions/*.xml
+ElementClientAssistant/.vs/
