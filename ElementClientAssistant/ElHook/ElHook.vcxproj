@@ -184,6 +184,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ElHook.cpp" />
+    <CustomBuild Include="test.asm">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ml64 /c %(fileName).asm</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">asm build tools</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(fileName).obj</Outputs>
+    </CustomBuild>
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

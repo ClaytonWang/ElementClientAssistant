@@ -49,4 +49,9 @@
       <Filter>资源文件</Filter>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="test.asm">
+      <Filter>源文件</Filter>
+    </CustomBuild>
+  </ItemGroup>
 </Project>
