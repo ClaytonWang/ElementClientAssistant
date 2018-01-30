@@ -182,4 +182,4 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 # VS 2015 config folder
-ElementClientAssistant/.vs/
+ElementClientAssistant/.vs/**/*
