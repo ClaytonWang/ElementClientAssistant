@@ -1,6 +1,5 @@
-
-EXTERN g_val1:DQ
-EXTERN g_val2:DQ
+;EXTERN g_val1:DWORD
+;EXTERN g_val2:DWORD
 
 .CODE
 

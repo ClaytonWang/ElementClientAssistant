@@ -47,8 +47,8 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="test.asm">
+    <MASM Include="test.asm">
       <Filter>源文件</Filter>
-    </CustomBuild>
+    </MASM>
   </ItemGroup>
 </Project>

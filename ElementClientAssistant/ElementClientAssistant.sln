@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElementClientAssistant", "E
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ElHook", "ElHook\ElHook.vcxproj", "{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MsgHook", "MsgHook\MsgHook.vcxproj", "{72F98267-CEF0-493B-A684-D9B95C2AB889}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Release|x64.Build.0 = Release|x64
 		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Release|x86.ActiveCfg = Release|Win32
 		{ADDDAFD0-2F20-4088-AE81-F22BBD0A0121}.Release|x86.Build.0 = Release|Win32
+		{72F98267-CEF0-493B-A684-D9B95C2AB889}.Debug|x64.ActiveCfg = Debug|x64
+		{72F98267-CEF0-493B-A684-D9B95C2AB889}.Debug|x64.Build.0 = Debug|x64
+		{72F98267-CEF0-493B-A684-D9B95C2AB889}.Debug|x86.ActiveCfg = Debug|Win32
+		{72F98267-CEF0-493B-A684-D9B95C2AB889}.Debug|x86.Build.0 = Debug|Win32
+		{72F98267-CEF0-493B-A684-D9B95C2AB889}.Release|x64.ActiveCfg = Release|x64
+		{72F98267-CEF0-493B-A684-D9B95C2AB889}.Release|x64.Build.0 = Release|x64
+		{72F98267-CEF0-493B-A684-D9B95C2AB889}.Release|x86.ActiveCfg = Release|Win32
+		{72F98267-CEF0-493B-A684-D9B95C2AB889}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

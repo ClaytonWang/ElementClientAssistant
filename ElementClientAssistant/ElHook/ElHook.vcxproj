@@ -58,6 +58,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -184,12 +185,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ElHook.cpp" />
-    <CustomBuild Include="test.asm">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ml64 /c %(fileName).asm</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">asm build tools</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(fileName).obj</Outputs>
-    </CustomBuild>
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -209,7 +204,14 @@
   <ItemGroup>
     <ResourceCompile Include="ElHook.rc" />
   </ItemGroup>
+  <ItemGroup>
+    <MASM Include="test.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </MASM>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
   </ImportGroup>
 </Project>
