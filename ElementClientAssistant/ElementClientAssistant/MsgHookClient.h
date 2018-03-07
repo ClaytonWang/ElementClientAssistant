@@ -10,7 +10,9 @@ class MsgHookClient
 public:
 	MsgHookClient();
 	BOOL SetWinHKInject(WCHAR *pszDllPath, WCHAR *pszProcess);
+	BOOL UnhookWinHKInject();
 private:
 	DWORD GetTargetProcessIdFromProcName(WCHAR *procName);
 	DWORD GetTargetThreadIdFromProcId(DWORD procId);
+	HHOOK  g_hhook = NULL;
 };

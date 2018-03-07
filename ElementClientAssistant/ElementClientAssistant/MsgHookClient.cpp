@@ -37,7 +37,10 @@ DWORD MsgHookClient::GetTargetProcessIdFromProcName(WCHAR *procName)
 	}
 
 	CloseHandle(thSnapshot);
-	return pe.th32ProcessID;
+	if (ProcFound)
+		return pe.th32ProcessID;
+	else
+		return NULL;
 }
 
 DWORD MsgHookClient::GetTargetThreadIdFromProcId(DWORD procId)
@@ -60,8 +63,10 @@ DWORD MsgHookClient::GetTargetThreadIdFromProcId(DWORD procId)
 	}
 
 	CloseHandle(hSnapshot);
-
-	return te.th32ThreadID;
+	if (ThreadFound)
+		return te.th32ThreadID;
+	else
+		return NULL;
 
 	//_asm {
 	//	mov eax, dword ptr fs:[0x18]
@@ -90,7 +95,6 @@ BOOL MsgHookClient::SetWinHKInject(WCHAR *pszDllPath, WCHAR *pszProcess)
 	DWORD  lpFunc = NULL;
 	DWORD  dwThreadId;
 	DWORD  dwProcID;
-	HHOOK  g_hhook = NULL;
 	PVOID  pShareM = NULL;
 
 	OutputDebugString(L"[+] SetWinHKInject Enter!\n");
@@ -112,16 +116,23 @@ BOOL MsgHookClient::SetWinHKInject(WCHAR *pszDllPath, WCHAR *pszProcess)
 	}
 
 	dwProcID = GetTargetProcessIdFromProcName(pszProcess);
+	if (!dwProcID) 
+	{
+		OutputDebugString(L"[+] GetProcessId error!\n");
+		goto Exit;
+	}
 	dwThreadId = GetTargetThreadIdFromProcId(dwProcID);
 	if (!dwThreadId)
+	{
+		OutputDebugString(L"[+] GetThreadId error!\n");
 		goto Exit;
-
+	}
 
 	g_hhook = SetWindowsHookEx(
 		WH_KEYBOARD,//WH_KEYBOARD,//WH_CALLWNDPROC,
 		(HOOKPROC)lpFunc,
 		hMod,
-		dwThreadId
+		dwThreadId//0 为系统级钩子
 	);
 
 	if (!g_hhook)
@@ -137,4 +148,9 @@ Exit:
 		FreeLibrary(hMod);
 	return bSuccess;
 
+}
+
+BOOL MsgHookClient::UnhookWinHKInject()
+{
+	return UnhookWindowsHookEx(g_hhook);
 }
